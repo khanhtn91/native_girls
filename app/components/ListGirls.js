@@ -105,7 +105,7 @@ export default class ListGirls extends React.Component {
   renderPost(girl) {
     const { _onChooseGirl } = this.props;
     const { girls, width } = this.state;
-    
+    console.warn(girl.url);
     let numCol = (width < 800) ? 2 : parseInt(width / 400);
     return (
       <TouchableOpacity 
@@ -119,10 +119,12 @@ export default class ListGirls extends React.Component {
           });
         }}
         >
-          <FitImage 
+          {/*<FitImage
             resizeMode='stretch'
             source={{uri: girl.url}}
-          />
+          />*/}
+
+          <img src="{{girl.url}}" alt=""/>
           <Text style={{marginBottom: 10}}>
           {girl.title}
           </Text>
